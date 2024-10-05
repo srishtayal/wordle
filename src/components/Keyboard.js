@@ -32,7 +32,7 @@ function Keyboard() {
         });
       }
     },
-    [gameOver.gameOver, onEnter, onDelete, onSelectLetter] // Removed keys1, keys2, keys3 and currAttempt
+    [gameOver.gameOver, onEnter, onDelete, onSelectLetter, keys1, keys2, keys3] // Added keys1, keys2, keys3 to the dependency array
   );
 
   useEffect(() => {
