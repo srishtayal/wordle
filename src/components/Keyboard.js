@@ -24,25 +24,18 @@ function Keyboard() {
       } else if (event.key === "Backspace") {
         onDelete();
       } else {
-        keys1.forEach((key) => {
-          if (event.key.toLowerCase() === key.toLowerCase()) {
-            onSelectLetter(key);
-          }
-        });
-        keys2.forEach((key) => {
-          if (event.key.toLowerCase() === key.toLowerCase()) {
-            onSelectLetter(key);
-          }
-        });
-        keys3.forEach((key) => {
-          if (event.key.toLowerCase() === key.toLowerCase()) {
-            onSelectLetter(key);
-          }
+        [keys1, keys2, keys3].forEach((keys) => {
+          keys.forEach((key) => {
+            if (event.key.toLowerCase() === key.toLowerCase()) {
+              onSelectLetter(key);
+            }
+          });
         });
       }
     },
-    [currAttempt]
+    [gameOver.gameOver, keys1, keys2, keys3, onEnter, onDelete, onSelectLetter] 
   );
+  
   useEffect(() => {
     document.addEventListener("keydown", handleKeyboard);
 
