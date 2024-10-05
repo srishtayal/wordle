@@ -9,7 +9,6 @@ function Keyboard() {
 
   const {
     disabledLetters,
-    currAttempt,
     gameOver,
     onSelectLetter,
     onEnter,
@@ -33,9 +32,9 @@ function Keyboard() {
         });
       }
     },
-    [gameOver.gameOver, keys1, keys2, keys3, onEnter, onDelete, onSelectLetter] 
+    [gameOver.gameOver, onEnter, onDelete, onSelectLetter] // Removed keys1, keys2, keys3 and currAttempt
   );
-  
+
   useEffect(() => {
     document.addEventListener("keydown", handleKeyboard);
 

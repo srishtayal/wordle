@@ -12,13 +12,13 @@ function Letter({ letterPos, attemptVal }) {
     currAttempt.attempt > attemptVal &&
     (correct ? "correct" : almost ? "almost" : "error");
 
-    useEffect(() => {
-      if (letter !== "" && !correct && !almost) {
-        console.log(letter);
-        setDisabledLetters((prev) => [...prev, letter]);
-      }
-    }, [letter, correct, almost, currAttempt.attempt]);
-    
+  useEffect(() => {
+    if (letter !== "" && !correct && !almost) {
+      console.log(letter);
+      setDisabledLetters((prev) => [...prev, letter]);
+    }
+  }, [letter, correct, almost, currAttempt.attempt, setDisabledLetters]); 
+
   return (
     <div className="letter" id={letterState}>
       {letter}
